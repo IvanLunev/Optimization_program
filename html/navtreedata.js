@@ -23,7 +23,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_area1_8cpp.html"
+"_area_8h.html"
 ];
 
 var SYNCONMSG = 'нажмите на выключить для синхронизации панелей';

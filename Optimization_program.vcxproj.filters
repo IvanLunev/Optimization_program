@@ -51,7 +51,10 @@
     <ClInclude Include="Stop2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Area1.h">
+    <ClInclude Include="Rectangular_Area.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FUN4.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -80,7 +83,10 @@
     <ClCompile Include="Stop2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Area1.cpp">
+    <ClCompile Include="Rectangular_Area.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FUN4.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

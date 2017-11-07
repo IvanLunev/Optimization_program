@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main',['main',['../_optimization__program_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'Optimization_program.cpp']]]
+  ['newton_5foptimization',['newton_optimization',['../class_optimization.html#aff64263ee3d11fe677153967b700c317',1,'Optimization']]]
 ];

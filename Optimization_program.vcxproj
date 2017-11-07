@@ -144,7 +144,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Area.h" />
-    <ClInclude Include="Area1.h" />
+    <ClInclude Include="FUN4.h" />
+    <ClInclude Include="Rectangular_Area.h" />
     <ClInclude Include="FUN1.h" />
     <ClInclude Include="FUN2.h" />
     <ClInclude Include="FUN3.h" />
@@ -157,7 +158,8 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Area1.cpp" />
+    <ClCompile Include="FUN4.cpp" />
+    <ClCompile Include="Rectangular_Area.cpp" />
     <ClCompile Include="FUN1.cpp" />
     <ClCompile Include="FUN2.cpp" />
     <ClCompile Include="FUN3.cpp" />

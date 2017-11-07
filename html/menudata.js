@@ -20,7 +20,6 @@ var menudata={children:[
 {text:"s",url:"functions.html#index_s"},
 {text:"v",url:"functions.html#index_v"}]},
 {text:"Функции",url:"functions_func.html",children:[
-{text:"a",url:"functions_func.html#index_a"},
 {text:"f",url:"functions_func.html#index_f"},
 {text:"g",url:"functions_func.html#index_g"},
 {text:"h",url:"functions_func.html#index_h"},
