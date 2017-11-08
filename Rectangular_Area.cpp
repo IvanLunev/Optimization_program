@@ -14,6 +14,12 @@ using namespace std;
 /*! Конструктор. Задает V0 и delta0.*/
 Rectangular_Area::Rectangular_Area(VectorXd V0, VectorXd delta0) :V0(V0), delta0(delta0) {}
 
+/*! Возвращает true, если вектор в оласти.*/
+bool Rectangular_Area::In(VectorXd& V) const {
+	VectorXd Vec = (V - V0).array() / delta0.array();
+	return (Vec.lpNorm<Infinity>()<1); // максимум модуля координат < 1
+};
+
 
 /*! Возвращает случайный вектор в оласти.*/
 VectorXd Rectangular_Area::rand_vec() const {

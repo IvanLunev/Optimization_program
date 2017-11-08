@@ -23,6 +23,8 @@ public:
 	Rectangular_Area(VectorXd V0, VectorXd delta0);
 	/*! Возвращает случайный вектор в оласти.*/
 	VectorXd rand_vec() const override;
+	/*! Возвращает true, если вектор в оласти.*/
+	 bool In(VectorXd& V) const override;
 	/*! Возвращает случайный вектор в оласти с центром v и "раздутую" на минимальное расстояние координат вектора V до границы области.*/
 	VectorXd rand_vec(VectorXd& V) const override;
 };

@@ -61,16 +61,47 @@ VectorXd Optimization::random_search(VectorXd V,double p) {
 /*!  Возвращает результат оптимизации методом Ньютона.*/
 VectorXd Optimization::newton_optimization(VectorXd V) {
 	VectorXd Gr(Fun->dim);
+	VectorXd Vec(Fun->dim);
+	VectorXd Dir(Fun->dim);
 
 	int i = 0;
+	int j = 0;
 
-	while (St->StopCriterion(Fun, V, i, i)) {
+	while (St->StopCriterion(Fun, V, j, i)) {
+		
+		Dir = Fun->Hessian(V).colPivHouseholderQr().solve(Fun->Gradient(V));
+
+		Vec = V - Dir;
+		while (!(Ar->In(Vec))) {
+			Dir = Dir / 2;
+			Vec = V - Dir;
+
+		}
+		
+		
+		
+
+		VectorXd l = V, r = Vec;
+		double EPS = 0.00001;
+
+		while ((r - l).lpNorm<Infinity>() > EPS) {
+			++j;
+			VectorXd m1 = l + (r - l) / 3,
+				m2 = r - (r - l) / 3;
+			if (Fun->fun_value(m1) < Fun->fun_value(m2))
+				r = m1;
+			else
+				l = m2;
+
+		}
+		V = l;
+		++j;
 		++i;
-		V = V - Fun->Hessian(V).colPivHouseholderQr().solve(Fun->Gradient(V));
+
 	}
 
 	suc_it = i;
-	it = i;
+	it = j;
 
 	return V;
 }

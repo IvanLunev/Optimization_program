@@ -15,6 +15,9 @@ public:
 	/*! Возвращает случайный вектор в оласти.*/
 	virtual VectorXd rand_vec() const=0;
 
+	/*! Возвращает true, если вектор в оласти.*/
+	virtual bool In(VectorXd& V) const = 0;
+
 	/*! Возвращает случайный вектор в оласти с центром v и "раздутую" на минимальное расстояние координат вектора V до границы области.*/
 	virtual VectorXd rand_vec(VectorXd& V) const = 0;
 

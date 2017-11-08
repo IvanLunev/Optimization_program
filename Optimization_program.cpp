@@ -22,11 +22,12 @@ using namespace std;
 int main()
 {
 
+
 	cout << "Choose your method: \n" << "1 - Newton \n" << "2 - random search \n" << endl;
 
 	int method;
 	double method0 = 0;
-	
+
 	while (!(method0 == 1 || method0 == 2)) {
 		while (std::cout << "Please , enter a number (1 or 2)\n"
 			&& !(std::cin >> method0)) {
@@ -35,9 +36,17 @@ int main()
 			std::getline(std::cin, line);
 			std::cout << "I am sorry , but <<" << line
 				<< ">> is  not a number \n";
-		}		if (!(method0 == 1 || method0 == 2)) std::cout << "This number is not 1 or 2. Try again..." << endl;		else method = method0;	}
+		}
+		if (!(method0 == 1 || method0 == 2)) 
+			std::cout << "This number is not 1 or 2. Try again..." << endl;
+		else method = (int)method0;
+	}
 
-	cout << "\n Choose your function: \n" << "1 - x^3+3xy^2-15x-12y \n" << "2 - 100(y-x)^2+(1-x)^2 \n" << "3 - 100(y-x^3)^2+(1-x)^2 \n" 
+
+	cout << "\n Choose your function: \n" 
+		<< "1 - x^3+3xy^2-15x-12y \n" 
+		<< "2 - 100(y-x)^2+(1-x)^2 \n" 
+		<< "3 - 100(y-x^3)^2+(1-x)^2 \n"
 		<< "4 - x^2+2y^2+x^2y^2+z^2+exp(y^2+z^2)-y+z \n" << endl;
 
 	int choose;
@@ -52,7 +61,11 @@ int main()
 			std::getline(std::cin, line);
 			std::cout << "I am sorry , but <<" << line
 				<< ">> is  not a number \n";
-		}		if (!(choose0 == 1 || choose0 == 2 || choose0 == 3 || choose0 == 4)) std::cout << "This number is not 1, 2, 3 or 4. Try again..." << endl;		else choose = choose0;	}
+		}
+		if (!(choose0 == 1 || choose0 == 2 || choose0 == 3 || choose0 == 4)) 
+			std::cout << "This number is not 1, 2, 3 or 4. Try again..." << endl;
+		else choose = (int)choose0;
+	}
 
 
 	Function * FF;
@@ -89,25 +102,29 @@ int main()
 
 		double num = 0;
 
-			while (std::cout << "Please , enter a number\n"
-				&& !(std::cin >> num)) {
-				std::cin.clear();
-				std::string line;
-				std::getline(std::cin, line);
-				std::cout << "I am sorry , but <<" << line
-					<< ">> is  not a number \n";		}
-			Vec[i] = num;			std::cout << "V[" << i << "]=" << Vec[i] << endl;
+		while (std::cout << "Please , enter a number\n"
+			&& !(std::cin >> num)) {
+			std::cin.clear();
+			std::string line;
+			std::getline(std::cin, line);
+			std::cout << "I am sorry , but <<" << line
+				<< ">> is  not a number \n";
+		}
+		Vec[i] = num;
+		std::cout << "V[" << i << "]=" << Vec[i] << endl;
 
 	}
-		
-
-
-	for (int i = 0; i<dim; ++i)
-		V(i) = Vec[i];
 
 
 
-	cout << "\n Choose stop criterion: \n" << "1 - Number od success iteration < max_suc and number of iteration < max \n" << "2 - Gradient < eps and number of iteration < max \n" << endl;
+	for (int i = 0; i < dim; ++i)
+	   V(i) = Vec[i];
+
+
+
+	cout << "\n Choose stop criterion: \n" 
+		<< "1 - Number od success iteration < max_suc and number of iteration < max \n" 
+		<< "2 - Gradient < eps and number of iteration < max \n" << endl; 
 
 	int stop_ch;
 	double stop_ch0 = 0;
@@ -121,14 +138,19 @@ int main()
 			std::getline(std::cin, line);
 			std::cout << "I am sorry , but <<" << line
 				<< ">> is  not a number \n";
-		}		if (!(stop_ch0 == 1 || stop_ch0 == 2)) std::cout << "This number is not 1 or 2. Try again..." << endl;		else stop_ch = stop_ch0;	}
+		}
+		if (!(stop_ch0 == 1 || stop_ch0 == 2)) 
+			std::cout << "This number is not 1 or 2. Try again..." << endl;
+		else stop_ch = (int)stop_ch0;
+	}
+
 
 
 	cout << "\n Max iteration: \n" << endl;
 	int max_iter;
 	double max_iter0 = 0.1;
 
-	double i=0;
+	double i = 0;
 
 	while (max_iter0 <= 0 || !(modf(max_iter0, &i) == 0)) {
 		while (std::cout << "Please , enter a positive integer number\n"
@@ -138,7 +160,11 @@ int main()
 			std::getline(std::cin, line);
 			std::cout << "I am sorry , but <<" << line
 				<< ">> is  not a number \n";
-		}		if (max_iter0 <= 0 || !(modf(max_iter0, &i) == 0)) std::cout << "This number is not positive or is not integer. Try again..." << endl;		else max_iter = max_iter0;	}
+		}
+		if (max_iter0 <= 0 || !(modf(max_iter0, &i) == 0)) 
+			std::cout << "This number is not positive or is not integer. Try again..." << endl;
+		else max_iter = (int)max_iter0;
+	}
 
 
 
@@ -163,10 +189,14 @@ int main()
 				std::getline(std::cin, line);
 				std::cout << "I am sorry , but <<" << line
 					<< ">> is  not a number \n";
-			}			if (suc_iter_num0 <= 0 || !(modf(suc_iter_num0, &i) == 0)) std::cout << "This number is not positive or is not integer. Try again..." << endl;			else suc_iter_num = suc_iter_num0;		}
+			}
+			if (suc_iter_num0 <= 0 || !(modf(suc_iter_num0, &i) == 0)) 
+				std::cout << "This number is not positive or is not integer. Try again..." << endl;
+			else suc_iter_num = (int)suc_iter_num0;
+		}
 
 
-		St = new Stop1(max_iter,suc_iter_num);
+		St = new Stop1(max_iter, suc_iter_num);
 		break;
 	}
 	case 2: {
@@ -182,13 +212,19 @@ int main()
 				std::getline(std::cin, line);
 				std::cout << "I am sorry , but <<" << line
 					<< ">> is  not a number \n";
-			}			if (num <= 0) std::cout << "This number is not positive. Try again..." << endl;			else			{				eps = num;			}		}
+			}
+			if (num <= 0) std::cout << "This number is not positive. Try again..." << endl;
+			else
+			{
+				eps = num;
+			}
+		}
 
 
-		St = new Stop2(max_iter,eps);
+		St = new Stop2(max_iter, eps);
 		break;
 	}
-}
+	}
 
 	Area * Ar;
 
@@ -203,21 +239,24 @@ int main()
 
 		double num = 0;
 
-	
-			while (std::cout << "Please , enter a positive number\n"
-				&& !(std::cin >> num)) {
-				std::cin.clear();
-				std::string line;
-				std::getline(std::cin, line);
-				std::cout << "I am sorry , but <<" << line
-					<< ">> is  not a number \n";
-		}
-			Vec[i] = num;			std::cout << "V[" << i << "]=" << Vec[i] << endl;
+
+		while (std::cout << "Please , enter a number\n"
+			&& !(std::cin >> num)) {
+			std::cin.clear();
+			std::string line;
+			std::getline(std::cin, line);
+			std::cout << "I am sorry , but <<" << line
+				<< ">> is  not a number \n";
+
+		}
+
+		Vec[i] = num;
+		std::cout << "V[" << i << "]=" << Vec[i] << endl;
 
 	}
 
 
-	for (int i = 0; i<dim; ++i)
+	for (int i = 0; i < dim; ++i)
 		V0(i) = Vec[i];
 
 
@@ -240,25 +279,33 @@ int main()
 				std::getline(std::cin, line);
 				std::cout << "I am sorry , but <<" << line
 					<< ">> is  not a number \n";
-			}			if (num <= 0) std::cout << "This number is not positive. Try again..." << endl;			else			{				Vec[i] = num;				std::cout << "V[" << i << "]=" << Vec[i] << endl;			}		}
+			}
+			if (num <= 0) std::cout << "This number is not positive. Try again..." << endl;
+			else
+			{
+				Vec[i] = num;
+				std::cout << "V[" << i << "]=" << Vec[i] << endl;
+			}
+		}
 
 	}
 
 
-	for (int i = 0; i<dim; ++i)
+	for (int i = 0; i < dim; ++i)
 		delta(i) = Vec[i];
 
 
 
-	Ar = new Rectangular_Area(V0,delta);
+	Ar = new Rectangular_Area(V0, delta);
 
-	Optimization Op(Ar,FF,St);
+	Optimization Op(Ar, FF, St);
+	VectorXd Min;
 
 	switch (method)
 	{
 	case 1: {
 
-		std::cout << "\n Function: \n" << FF->func_name() << "\n\n" << "Min point: \n" << Op.newton_optimization(V) << std::endl;
+		Min = Op.newton_optimization(V);
 
 		break;
 	}
@@ -268,7 +315,7 @@ int main()
 		double p;
 		double num = 0;
 
-		while (num <= 0 || num>=1) {
+		while (num <= 0 || num >= 1) {
 			while (std::cout << "Please , enter a number from (0;1)\n"
 				&& !(std::cin >> num)) {
 				std::cin.clear();
@@ -276,17 +323,30 @@ int main()
 				std::getline(std::cin, line);
 				std::cout << "I am sorry , but <<" << line
 					<< ">> is  not a number \n";
-			}			if (num <= 0 | num >= 1) std::cout << "This number is not from (0;1). Try again..." << endl;			else			{				p = num;			}		}
+			}
+			if (num <= 0 || num >= 1) std::cout << "This number is not from (0;1). Try again..." << endl;
+			else
+			{
+				p = num;
+			}
+		}
 
-		VectorXd Min = Op.random_search(V, p);
+		 Min = Op.random_search(V, p);
 
-		std::cout << "\n Function: \n" << FF->func_name() << "\n Initial vector: \n" << V << "\n Center of area: \n" << V0
-			<< "\n Scale of area: \n" <<delta << "\n\n" << "Min point: \n" << Min << "\n Min: \n" << FF->fun_value(Min) << std::endl;
+		
 
 		break;
+		}
 	}
-}
 
+	std::cout << "\n Function: \n" << FF->func_name()
+		<< "\n Initial vector: \n" << V
+		<< "\n Center of area: \n" << V0
+		<< "\n Scale of area: \n" << delta << "\n\n"
+		<< "\n Iterations: \n" << Op.it << "\n\n"
+		<< "\n Success iterations: \n" << Op.suc_it << "\n\n"
+		<< "Min point: \n" << Min
+		<< "\n Min: \n" << FF->fun_value(Min) << std::endl;
 
 	delete Vec;
 
@@ -295,6 +355,6 @@ int main()
 	delete Ar;
 
 	system("pause");
-    return 0;
+	return 0;
 }
 
